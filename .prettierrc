@@ -1,0 +1,9 @@
+{
+	"useTabs": true,
+	"trailingComma": "none",
+	"arrowParens": "avoid",
+	"bracketSpacing": true,
+	"singleQuote": false,
+	"vueIndentScriptAndStyle": false,
+	"htmlWhitespaceSensitivity": "ignore"
+}

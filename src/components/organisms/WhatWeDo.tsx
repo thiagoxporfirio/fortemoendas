@@ -12,43 +12,43 @@ const products = [
 	{
 		title: "Moendas — Friso e Fabricação",
 		desc: "Execução de friso (grooving) em cilindros e fabricação de novas moendas completas, com padrões técnicos que maximizam a extração de caldo.",
-		img: "/images/fortesimples.png",
+		img: "/images/fortecapa2.png",
 		tag: "Friso & Fabricação"
 	},
 	{
 		title: "Cilindros de Moenda",
 		desc: "Usinagem e recuperação de cilindros superiores, de entrada e saída, com revestimento e grooving conforme especificação técnica.",
-		img: "/images/fortesimples.png",
+		img: "/images/fortecapap.png",
 		tag: "Usinagem"
 	},
 	{
 		title: "Coroas e Pinhões",
 		desc: "Fabricação de engrenagens industriais de grande porte com aço especial, garantindo precisão dimensional e alta resistência ao desgaste.",
-		img: "/images/fortesimples.png",
+		img: "/images/industria.jpg",
 		tag: "Fabricação"
 	},
 	{
 		title: "Tambor Nivelador",
 		desc: "Fabricação e reforma de tambores niveladores para preparação da cana, garantindo uniformidade na alimentação e eficiência no processo de moagem.",
-		img: "/images/fortesimples.png",
+		img: "/images/tembor.jpeg",
 		tag: "Fabricação & Reforma"
 	},
 	{
 		title: "Rodetes",
 		desc: "Fabricação e recuperação de rodetes para conjuntos de moenda, com usinagem de precisão e materiais selecionados para alta resistência ao desgaste.",
-		img: "/images/fortesimples.png",
+		img: "/images/rodete.jpeg",
 		tag: "Usinagem"
 	},
 	{
 		title: "Volandeiras",
 		desc: "Fabricação e reforma de volandeiras, componentes críticos no conjunto de moenda, com controle dimensional rigoroso e acabamento conforme projeto.",
-		img: "/images/fortesimples.png",
+		img: "/images/volandeira.jpeg",
 		tag: "Fabricação & Reforma"
 	},
 	{
 		title: "Casquilhos",
 		desc: "Fabricação e recuperação de casquilhos para eixos de moenda, com tolerâncias apertadas, bronzes especiais e geometria adequada ao projeto original.",
-		img: "/images/fortesimples.png",
+		img: "/images/trabalhos.jpg",
 		tag: "Fabricação & Recuperação"
 	}
 ];
@@ -126,14 +126,32 @@ export default function WhatWeDo() {
 						viewport={{ once: true, margin: "-60px" }}
 						className="relative"
 					>
-						<img
-							src="/images/usinas-acucar.jpg"
-							alt="Equipe técnica Forte Moendas em campo"
-							className="rounded-2xl w-full h-80 object-cover shadow-xl"
-						/>
+						{/* Collage de fotos reais */}
+						<div className="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden shadow-xl">
+							<img
+								src="/images/tambor2.jpeg"
+								alt="Tambor nivelador Forte Moendas"
+								className="w-full h-44 object-cover"
+							/>
+							<img
+								src="/images/rodete2.jpeg"
+								alt="Rodetes Forte Moendas"
+								className="w-full h-44 object-cover"
+							/>
+							<img
+								src="/images/volandeira2.jpeg"
+								alt="Volandeira Forte Moendas"
+								className="w-full h-44 object-cover"
+							/>
+							<img
+								src="/images/rodete3.jpeg"
+								alt="Rodete usinagem Forte Moendas"
+								className="w-full h-44 object-cover"
+							/>
+						</div>
 						{/* Badge sobre a foto */}
 						<div className="absolute bottom-4 left-4 bg-brand-green text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow">
-							Setor Sucroenergético
+							Trabalhos Reais
 						</div>
 					</motion.div>
 

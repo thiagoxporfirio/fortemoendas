@@ -1,34 +1,64 @@
-import React from "react"
-import { motion } from "framer-motion"
-import { staggerContainer, fadeUp, fadeLeft, fadeRight, cardItem } from "../../lib/motion"
+import React from "react";
+import { motion } from "framer-motion";
+import {
+	staggerContainer,
+	fadeUp,
+	fadeLeft,
+	fadeRight,
+	cardItem
+} from "../../lib/motion";
 
 const products = [
 	{
-		title: "Moendas de Cana-de-Açúcar",
-		desc: "Fabricação e reforma completa de moendas de alta capacidade, projetadas para máxima extração e durabilidade em operações contínuas.",
-		img: "/images/fortecapa2.png",
-		tag: "Fabricação & Reforma"
+		title: "Moendas — Friso e Fabricação",
+		desc: "Execução de friso (grooving) em cilindros e fabricação de novas moendas completas, com padrões técnicos que maximizam a extração de caldo.",
+		img: "/images/fortesimples.png",
+		tag: "Friso & Fabricação"
 	},
 	{
 		title: "Cilindros de Moenda",
 		desc: "Usinagem e recuperação de cilindros superiores, de entrada e saída, com revestimento e grooving conforme especificação técnica.",
-		img: "/images/fortecapap.png",
+		img: "/images/fortesimples.png",
 		tag: "Usinagem"
 	},
 	{
 		title: "Coroas e Pinhões",
 		desc: "Fabricação de engrenagens industriais de grande porte com aço especial, garantindo precisão dimensional e alta resistência ao desgaste.",
-		img: "/images/industria.jpg",
+		img: "/images/fortesimples.png",
 		tag: "Fabricação"
+	},
+	{
+		title: "Tambor Nivelador",
+		desc: "Fabricação e reforma de tambores niveladores para preparação da cana, garantindo uniformidade na alimentação e eficiência no processo de moagem.",
+		img: "/images/fortesimples.png",
+		tag: "Fabricação & Reforma"
+	},
+	{
+		title: "Rodetes",
+		desc: "Fabricação e recuperação de rodetes para conjuntos de moenda, com usinagem de precisão e materiais selecionados para alta resistência ao desgaste.",
+		img: "/images/fortesimples.png",
+		tag: "Usinagem"
+	},
+	{
+		title: "Volandeiras",
+		desc: "Fabricação e reforma de volandeiras, componentes críticos no conjunto de moenda, com controle dimensional rigoroso e acabamento conforme projeto.",
+		img: "/images/fortesimples.png",
+		tag: "Fabricação & Reforma"
+	},
+	{
+		title: "Casquilhos",
+		desc: "Fabricação e recuperação de casquilhos para eixos de moenda, com tolerâncias apertadas, bronzes especiais e geometria adequada ao projeto original.",
+		img: "/images/fortesimples.png",
+		tag: "Fabricação & Recuperação"
 	}
-]
+];
 
 const stats = [
 	{ value: "24h", label: "Suporte técnico" },
 	{ value: "+30", label: "Anos de experiência" },
 	{ value: "100%", label: "Foco no setor sucroenergético" },
 	{ value: "6", label: "Linhas de serviço" }
-]
+];
 
 export default function WhatWeDo() {
 	return (
@@ -80,11 +110,7 @@ export default function WhatWeDo() {
 					viewport={{ once: true, margin: "-60px" }}
 				>
 					{stats.map(s => (
-						<motion.div
-							key={s.label}
-							variants={fadeUp}
-							className="text-center"
-						>
+						<motion.div key={s.label} variants={fadeUp} className="text-center">
 							<p className="text-4xl font-extrabold text-white">{s.value}</p>
 							<p className="text-green-200 text-sm mt-1">{s.label}</p>
 						</motion.div>
@@ -141,7 +167,10 @@ export default function WhatWeDo() {
 								"Fabricação de engrenagens e transmissão de potência",
 								"Montagem e comissionamento em campo"
 							].map(item => (
-								<li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+								<li
+									key={item}
+									className="flex items-start gap-2 text-sm text-gray-700"
+								>
 									<span className="mt-0.5 h-2 w-2 rounded-full bg-brand-green flex-shrink-0" />
 									{item}
 								</li>
@@ -172,13 +201,16 @@ export default function WhatWeDo() {
 
 					<motion.div
 						variants={staggerContainer}
-						className="grid gap-8 md:grid-cols-3"
+						className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
 					>
 						{products.map(p => (
 							<motion.article
 								key={p.title}
 								variants={cardItem}
-								whileHover={{ y: -6, boxShadow: "0 16px 48px rgba(13,128,64,0.12)" }}
+								whileHover={{
+									y: -6,
+									boxShadow: "0 16px 48px rgba(13,128,64,0.12)"
+								}}
 								className="rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm cursor-default"
 							>
 								<div className="relative h-48 overflow-hidden">
@@ -193,8 +225,12 @@ export default function WhatWeDo() {
 									</span>
 								</div>
 								<div className="p-5">
-									<h4 className="font-bold text-brand-dark text-base mb-2">{p.title}</h4>
-									<p className="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+									<h4 className="font-bold text-brand-dark text-base mb-2">
+										{p.title}
+									</h4>
+									<p className="text-sm text-gray-600 leading-relaxed">
+										{p.desc}
+									</p>
 								</div>
 							</motion.article>
 						))}
@@ -202,5 +238,5 @@ export default function WhatWeDo() {
 				</motion.div>
 			</div>
 		</section>
-	)
+	);
 }

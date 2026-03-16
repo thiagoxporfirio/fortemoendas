@@ -16,15 +16,9 @@ const products = [
 		tag: "Friso & Fabricação"
 	},
 	{
-		title: "Cilindros de Moenda",
-		desc: "Usinagem e recuperação de cilindros superiores, de entrada e saída, com revestimento e grooving conforme especificação técnica.",
-		img: "/images/fortecapap.png",
-		tag: "Usinagem"
-	},
-	{
 		title: "Coroas e Pinhões",
 		desc: "Fabricação de engrenagens industriais de grande porte com aço especial, garantindo precisão dimensional e alta resistência ao desgaste.",
-		img: "/images/industria.jpg",
+		img: "/images/fortecapa2.png",
 		tag: "Fabricação"
 	},
 	{
@@ -48,7 +42,7 @@ const products = [
 	{
 		title: "Casquilhos",
 		desc: "Fabricação e recuperação de casquilhos para eixos de moenda, com tolerâncias apertadas, bronzes especiais e geometria adequada ao projeto original.",
-		img: "/images/trabalhos.jpg",
+		img: "/images/fortecapa2.png",
 		tag: "Fabricação & Recuperação"
 	}
 ];
@@ -82,9 +76,7 @@ export default function WhatWeDo() {
 						variants={fadeUp}
 						className="text-4xl font-extrabold text-brand-dark leading-tight"
 					>
-						O que a Forte Moendas
-						<br />
-						<span className="text-brand-green">fabrica e reforma</span>
+						Quem é a Forte Moendas S/A e o que fazemos? <br />
 					</motion.h2>
 					<motion.p
 						variants={fadeUp}

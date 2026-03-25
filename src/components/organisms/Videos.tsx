@@ -12,7 +12,7 @@ const videos = [
 	{
 		title: "Camisa de Moenda 78",
 		desc: "Processo de usinagem de precisão de uma camisa de moenda 78, com controle dimensional rigoroso e acabamento conforme projeto.",
-		src: "/images/camisaemoenda.mp4",
+		src: "/images/moendafrisada.mp4",
 		tag: "Usinagem"
 	}
 ];

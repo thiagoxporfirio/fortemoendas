@@ -5,7 +5,7 @@ import { staggerContainer, fadeUp, cardItem } from "../../lib/motion";
 const videos = [
 	{
 		title: "Flange de Moenda 78",
-		desc: "Acompanhe o processo completo de usinagem de um flange de moenda 78 na nossa estrutura fabril em Sertãozinho/SP.",
+		desc: "Processo de usinagem de um flange de moenda 78 na nossa estrutura fabril em Sertãozinho/SP.",
 		src: "/images/flangemoenda.mp4",
 		tag: "Usinagem"
 	},

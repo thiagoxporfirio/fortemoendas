@@ -49,7 +49,7 @@ const products = [
 
 const stats = [
 	{ value: "24h", label: "Suporte técnico" },
-	{ value: "+30", label: "Anos de experiência" },
+	{ value: "+15", label: "Anos de experiência" },
 	{ value: "100%", label: "Foco no setor sucroenergético" },
 	{ value: "6", label: "Linhas de serviço" }
 ];

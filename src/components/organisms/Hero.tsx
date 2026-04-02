@@ -18,7 +18,7 @@ const slides = [
 	{
 		title: "Montagem",
 		desc: "Equipes técnicas certificadas para montagem especializada.",
-		img: "/images/trabalhos.jpg"
+		img: "/images/volandeira2.jpeg"
 	},
 	{
 		title: "Reforma",

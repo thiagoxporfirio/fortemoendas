@@ -75,10 +75,10 @@ export default function Contact() {
 					>
 						<h3 className="font-bold text-brand-dark text-lg mb-3">E-mail</h3>
 						<a
-							href="mailto:marcos@fortemoendas.com.br"
+							href="mailto:contato@fortemoendas.com.br"
 							className="text-brand-green font-medium underline text-sm"
 						>
-							marcos@fortemoendas.com.br
+							contato@fortemoendas.com.br
 						</a>
 						<h3 className="font-bold text-brand-dark text-lg mt-5 mb-1">Setor</h3>
 						<p className="text-gray-700 text-sm">

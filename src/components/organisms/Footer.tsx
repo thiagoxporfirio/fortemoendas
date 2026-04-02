@@ -27,10 +27,10 @@ export default function Footer() {
 				<motion.div variants={fadeUp} className="text-right text-xs text-green-300 leading-relaxed">
 					<p>Av. Mauro Albertani, 1096 — Sertãozinho/SP</p>
 					<a
-						href="mailto:marcos@fortemoendas.com.br"
+						href="mailto:contato@fortemoendas.com.br"
 						className="text-green-200 hover:text-white transition-colors"
 					>
-						marcos@fortemoendas.com.br
+						contato@fortemoendas.com.br
 					</a>
 				</motion.div>
 			</div>

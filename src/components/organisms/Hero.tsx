@@ -1,10 +1,75 @@
-import React from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Button from "../atoms/Button"
-import { fadeUp, fadeLeft, floatLogo, staggerContainer } from "../../lib/motion"
+import { fadeUp, staggerContainer } from "../../lib/motion"
+
+const slides = [
+	{
+		title: "Engenharia",
+		desc: "Projetos voltados à confiabilidade operacional e performance máxima.",
+		img: "/images/industria.jpg"
+	},
+	{
+		title: "Fabricação",
+		desc: "Componentes industriais com precisão para o setor sucroenergético.",
+		img: "/images/volandeira.jpeg"
+	},
+	{
+		title: "Montagem",
+		desc: "Equipes técnicas certificadas para montagem especializada.",
+		img: "/images/trabalhos.jpg"
+	},
+	{
+		title: "Reforma",
+		desc: "Reforma completa de moendas com qualidade e vida útil garantida.",
+		img: "/images/rodete.jpeg"
+	},
+	{
+		title: "Manutenção",
+		desc: "Suporte preventivo e corretivo 24h ao lado da sua usina.",
+		img: "/images/rodete2.jpeg"
+	},
+	{
+		title: "Fornecimento de Peças",
+		desc: "Peças originais e sob medida com entrega ágil e suporte técnico.",
+		img: "/images/tambor2.jpeg"
+	}
+]
 
 export default function Hero() {
+	const [current, setCurrent] = useState(0)
+	const [direction, setDirection] = useState(1)
+
+	const goTo = useCallback(
+		(idx: number) => {
+			setDirection(idx > current ? 1 : -1)
+			setCurrent(idx)
+		},
+		[current]
+	)
+
+	const next = useCallback(() => {
+		setDirection(1)
+		setCurrent(c => (c + 1) % slides.length)
+	}, [])
+
+	const prev = useCallback(() => {
+		setDirection(-1)
+		setCurrent(c => (c - 1 + slides.length) % slides.length)
+	}, [])
+
+	useEffect(() => {
+		const id = setInterval(next, 3500)
+		return () => clearInterval(id)
+	}, [next])
+
+	const variants = {
+		enter: (d: number) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0 }),
+		center: { x: 0, opacity: 1 },
+		exit: (d: number) => ({ x: d > 0 ? "-100%" : "100%", opacity: 0 })
+	}
+
 	return (
 		<section
 			className="relative py-28 overflow-hidden"
@@ -76,22 +141,104 @@ export default function Hero() {
 					</motion.div>
 				</motion.div>
 
-				{/* Logo flutuante */}
-				<motion.div
-					className="flex-shrink-0"
-					variants={floatLogo}
-					initial="initial"
-					animate="animate"
-				>
-					<motion.img
-						src="/images/fortelogoonly.png"
-						alt="Forte Moendas"
-						className="w-96 h-96 object-contain drop-shadow-2xl"
-						initial={{ opacity: 0, scale: 0.8 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-					/>
-				</motion.div>
+				{/* Carrossel futurístico de serviços */}
+				<div className="flex-shrink-0 w-full md:w-[600px]">
+					{/* Moldura futurística */}
+					<div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-[0_0_60px_rgba(16,153,77,0.35)] bg-white/5 backdrop-blur-md">
+						{/* Barra de topo */}
+						<div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/10 bg-white/5">
+							<span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
+							<span className="w-2.5 h-2.5 rounded-full bg-green-300/50" />
+							<span className="w-2.5 h-2.5 rounded-full bg-white/30" />
+							<span className="ml-auto text-[10px] text-green-300/70 font-mono tracking-widest uppercase">
+								Serviços
+							</span>
+						</div>
+
+						{/* Slide */}
+						<div className="relative h-96 overflow-hidden">
+							<AnimatePresence custom={direction} initial={false}>
+								<motion.div
+									key={current}
+									custom={direction}
+									variants={variants}
+									initial="enter"
+									animate="center"
+									exit="exit"
+									transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+									className="absolute inset-0"
+								>
+									<img
+										src={slides[current].img}
+										alt={slides[current].title}
+										className="w-full h-full object-cover"
+									/>
+									{/* Overlay gradiente */}
+									<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+									{/* Badge de serviço */}
+									<div className="absolute top-3 left-3">
+										<span className="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-green-300 bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full border border-green-400/30">
+											{String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+										</span>
+									</div>
+
+									{/* Texto sobreposto */}
+									<div className="absolute bottom-0 left-0 right-0 p-4">
+										<p className="text-white font-bold text-lg leading-tight drop-shadow">
+											{slides[current].title}
+										</p>
+										<p className="text-green-200 text-xs mt-1 leading-relaxed line-clamp-2">
+											{slides[current].desc}
+										</p>
+									</div>
+
+									{/* Linhas de scan futurísticas */}
+									<div
+										className="absolute inset-0 pointer-events-none opacity-[0.04]"
+										style={{
+											backgroundImage:
+												"repeating-linear-gradient(0deg, rgba(255,255,255,0.4) 0px, transparent 1px, transparent 3px)"
+										}}
+									/>
+								</motion.div>
+							</AnimatePresence>
+
+							{/* Setas nav */}
+							<button
+								onClick={prev}
+								className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white hover:bg-green-600/60 transition-colors"
+							>
+								<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+									<path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+								</svg>
+							</button>
+							<button
+								onClick={next}
+								className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white hover:bg-green-600/60 transition-colors"
+							>
+								<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+									<path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+								</svg>
+							</button>
+						</div>
+
+						{/* Dots de navegação */}
+						<div className="flex items-center justify-center gap-1.5 py-3 bg-white/5 border-t border-white/10">
+							{slides.map((_, i) => (
+								<button
+									key={i}
+									onClick={() => goTo(i)}
+									className={`transition-all duration-300 rounded-full ${
+										i === current
+											? "w-6 h-1.5 bg-green-400"
+											: "w-1.5 h-1.5 bg-white/30 hover:bg-white/60"
+									}`}
+								/>
+							))}
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	)

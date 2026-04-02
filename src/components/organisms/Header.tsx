@@ -26,7 +26,7 @@ export default function Header() {
 					<motion.img
 						src="/images/fortelogonotbg.png"
 						alt="Forte Moendas logo"
-						className="h-14 w-auto"
+						className="h-20 w-auto"
 						whileHover={{ rotate: -5, scale: 1.05 }}
 						transition={{ type: "spring", stiffness: 300 }}
 					/>

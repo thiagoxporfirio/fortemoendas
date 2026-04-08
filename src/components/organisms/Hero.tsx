@@ -6,10 +6,15 @@ import { fadeUp, staggerContainer } from "../../lib/motion"
 
 const slides = [
 	{
-		title: "Engenharia",
-		desc: "Projetos voltados à confiabilidade operacional e performance máxima.",
-		img: "/images/industria.jpg"
+		title: "Nossa Empresa",
+		desc: "Tradição e excelência no setor sucroenergético.",
+		img: "/images/fortefaxada.jpeg"
 	},
+	// {
+	// 	title: "Engenharia",
+	// 	desc: "Projetos voltados à confiabilidade operacional e performance máxima.",
+	// 	img: "/images/industria.jpg"
+	// },
 	{
 		title: "Fabricação",
 		desc: "Componentes industriais com precisão para o setor sucroenergético.",
@@ -141,22 +146,11 @@ export default function Hero() {
 					</motion.div>
 				</motion.div>
 
-				{/* Carrossel futurístico de serviços */}
-				<div className="flex-shrink-0 w-full md:w-[600px]">
-					{/* Moldura futurística */}
-					<div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-[0_0_60px_rgba(16,153,77,0.35)] bg-white/5 backdrop-blur-md">
-						{/* Barra de topo */}
-						<div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/10 bg-white/5">
-							<span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
-							<span className="w-2.5 h-2.5 rounded-full bg-green-300/50" />
-							<span className="w-2.5 h-2.5 rounded-full bg-white/30" />
-							<span className="ml-auto text-[10px] text-green-300/70 font-mono tracking-widest uppercase">
-								Serviços
-							</span>
-						</div>
-
+				{/* Carrossel de serviços */}
+				<div className="flex-shrink-0 w-full md:w-[640px]">
+					<div className="relative rounded-xl overflow-hidden shadow-2xl">
 						{/* Slide */}
-						<div className="relative h-96 overflow-hidden">
+						<div className="relative h-[460px] overflow-hidden">
 							<AnimatePresence custom={direction} initial={false}>
 								<motion.div
 									key={current}
@@ -174,65 +168,49 @@ export default function Hero() {
 										className="w-full h-full object-cover"
 									/>
 									{/* Overlay gradiente */}
-									<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-									{/* Badge de serviço */}
-									<div className="absolute top-3 left-3">
-										<span className="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-green-300 bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full border border-green-400/30">
-											{String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-										</span>
-									</div>
+									<div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
 
 									{/* Texto sobreposto */}
-									<div className="absolute bottom-0 left-0 right-0 p-4">
-										<p className="text-white font-bold text-lg leading-tight drop-shadow">
+									<div className="absolute bottom-0 left-0 right-0 px-6 py-5">
+										<p className="text-white font-bold text-xl leading-tight drop-shadow">
 											{slides[current].title}
 										</p>
-										<p className="text-green-200 text-xs mt-1 leading-relaxed line-clamp-2">
+										<p className="text-green-200 text-sm mt-1 leading-relaxed">
 											{slides[current].desc}
 										</p>
 									</div>
 
-									{/* Linhas de scan futurísticas */}
-									<div
-										className="absolute inset-0 pointer-events-none opacity-[0.04]"
-										style={{
-											backgroundImage:
-												"repeating-linear-gradient(0deg, rgba(255,255,255,0.4) 0px, transparent 1px, transparent 3px)"
-										}}
-									/>
+									{/* Setas nav */}
+									<button
+										onClick={prev}
+										className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
+									>
+										<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+											<path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+										</svg>
+									</button>
+									<button
+										onClick={next}
+										className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
+									>
+										<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+											<path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+										</svg>
+									</button>
 								</motion.div>
 							</AnimatePresence>
-
-							{/* Setas nav */}
-							<button
-								onClick={prev}
-								className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white hover:bg-green-600/60 transition-colors"
-							>
-								<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-									<path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-								</svg>
-							</button>
-							<button
-								onClick={next}
-								className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white hover:bg-green-600/60 transition-colors"
-							>
-								<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-									<path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-								</svg>
-							</button>
 						</div>
 
 						{/* Dots de navegação */}
-						<div className="flex items-center justify-center gap-1.5 py-3 bg-white/5 border-t border-white/10">
+						<div className="absolute bottom-4 right-5 flex items-center gap-1.5 z-10">
 							{slides.map((_, i) => (
 								<button
 									key={i}
 									onClick={() => goTo(i)}
 									className={`transition-all duration-300 rounded-full ${
 										i === current
-											? "w-6 h-1.5 bg-green-400"
-											: "w-1.5 h-1.5 bg-white/30 hover:bg-white/60"
+											? "w-5 h-1.5 bg-white"
+											: "w-1.5 h-1.5 bg-white/40 hover:bg-white/70"
 									}`}
 								/>
 							))}

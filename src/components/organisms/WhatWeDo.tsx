@@ -12,13 +12,13 @@ const products = [
 	{
 		title: "Moendas — Friso e Fabricação",
 		desc: "Execução de friso (grooving) em cilindros e fabricação de novas moendas completas, com padrões técnicos que maximizam a extração de caldo.",
-		img: "/images/fortecapa2.png",
+		img: "/images/moenda.jpeg",
 		tag: "Friso & Fabricação"
 	},
 	{
 		title: "Coroas e Pinhões",
 		desc: "Fabricação de engrenagens industriais de grande porte com aço especial, garantindo precisão dimensional e alta resistência ao desgaste.",
-		img: "/images/fortecapa2.png",
+		img: "/images/engrenagensrodete.jpeg",
 		tag: "Fabricação"
 	},
 	{
@@ -42,9 +42,23 @@ const products = [
 	{
 		title: "Casquilhos",
 		desc: "Fabricação e recuperação de casquilhos para eixos de moenda, com tolerâncias apertadas, bronzes especiais e geometria adequada ao projeto original.",
-		img: "/images/fortecapa2.png",
+		img: "/images/buchas.jpeg",
 		tag: "Fabricação & Recuperação"
 	}
+];
+
+const photoGallery = [
+	{ src: "/images/moenda.jpeg", alt: "Moenda industrial" },
+	{ src: "/images/flange.jpeg", alt: "Flange de moenda" },
+	{ src: "/images/buchas.jpeg", alt: "Casquilhos e buchas usinadas" },
+	{ src: "/images/engrenagensrodete.jpeg", alt: "Engrenagens e rodete" },
+	{ src: "/images/tembor.jpeg", alt: "Tambor nivelador" },
+	{ src: "/images/tambor2.jpeg", alt: "Tambor nivelador em fabricação" },
+	{ src: "/images/rodete.jpeg", alt: "Rodete" },
+	{ src: "/images/rodete2.jpeg", alt: "Rodete em processo" },
+	{ src: "/images/rodete3.jpeg", alt: "Rodete finalizado" },
+	{ src: "/images/volandeira.jpeg", alt: "Volandeira" },
+	{ src: "/images/volandeira2.jpeg", alt: "Volandeira em montagem" }
 ];
 
 const stats = [
@@ -120,10 +134,15 @@ export default function WhatWeDo() {
 					>
 						{/* Collage de fotos reais */}
 						<div className="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden shadow-xl">
-							<img
-								src="/images/tambor2.jpeg"
-								alt="Tambor nivelador Forte Moendas"
+							<video
+								src="/images/pente.mp4"
+								title="Pente de moenda Forte Moendas"
 								className="w-full h-44 object-cover"
+								autoPlay
+								muted
+								loop
+								playsInline
+								preload="metadata"
 							/>
 							<img
 								src="/images/rodete2.jpeg"
@@ -136,8 +155,8 @@ export default function WhatWeDo() {
 								className="w-full h-44 object-cover"
 							/>
 							<img
-								src="/images/rodete3.jpeg"
-								alt="Rodete usinagem Forte Moendas"
+								src="/images/montagemcompleta.jpeg"
+								alt="Montagem completa Forte Moendas"
 								className="w-full h-44 object-cover"
 							/>
 						</div>
@@ -243,6 +262,46 @@ export default function WhatWeDo() {
 									</p>
 								</div>
 							</motion.article>
+						))}
+					</motion.div>
+				</motion.div>
+
+				<motion.div
+					variants={staggerContainer}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: "-60px" }}
+					className="mt-16"
+				>
+					<motion.p
+						variants={fadeUp}
+						className="text-brand-green text-xs font-bold uppercase tracking-[0.2em] mb-3"
+					>
+						Galeria técnica
+					</motion.p>
+					<motion.h3
+						variants={fadeUp}
+						className="text-2xl font-bold text-brand-dark mb-8"
+					>
+						Fotos recentes de fabricação e reforma
+					</motion.h3>
+
+					<motion.div
+						variants={staggerContainer}
+						className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+					>
+						{photoGallery.map(photo => (
+							<motion.div
+								key={photo.src}
+								variants={cardItem}
+								className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white"
+							>
+								<img
+									src={photo.src}
+									alt={photo.alt}
+									className="w-full h-40 object-cover"
+								/>
+							</motion.div>
 						))}
 					</motion.div>
 				</motion.div>

@@ -6,39 +6,34 @@ import { fadeUp, staggerContainer } from "../../lib/motion"
 
 const slides = [
 	{
-		title: "Nossa Empresa",
-		desc: "Tradição e excelência no setor sucroenergético.",
-		img: "/images/fortefaxada.jpeg"
-	},
-	// {
-	// 	title: "Engenharia",
-	// 	desc: "Projetos voltados à confiabilidade operacional e performance máxima.",
-	// 	img: "/images/industria.jpg"
-	// },
-	{
-		title: "Fabricação",
-		desc: "Componentes industriais com precisão para o setor sucroenergético.",
-		img: "/images/volandeira.jpeg"
+		title: "Moenda - Usinagem de Camisa",
+		desc: "Processo de usinagem de camisa de moenda com controle técnico de acabamento.",
+		video: "/images/moendafrisada.mp4"
 	},
 	{
-		title: "Montagem",
-		desc: "Equipes técnicas certificadas para montagem especializada.",
-		img: "/images/volandeira2.jpeg"
+		title: "Moenda em Operação",
+		desc: "Registro do processo de moenda em operação com foco em desempenho industrial.",
+		video: "/images/moendavideo.mp4"
 	},
 	{
-		title: "Reforma",
-		desc: "Reforma completa de moendas com qualidade e vida útil garantida.",
-		img: "/images/rodete.jpeg"
+		title: "Moenda - Processo Complementar",
+		desc: "Etapa complementar de operação e ajuste técnico na linha de moagem.",
+		video: "/images/moendavideo2.mp4"
 	},
 	{
-		title: "Manutenção",
-		desc: "Suporte preventivo e corretivo 24h ao lado da sua usina.",
-		img: "/images/rodete2.jpeg"
+		title: "Pente de Moenda - Fabricação",
+		desc: "Fabricação de pente de moenda com robustez estrutural e precisão geométrica.",
+		video: "/images/pente.mp4"
 	},
 	{
-		title: "Fornecimento de Peças",
-		desc: "Peças originais e sob medida com entrega ágil e suporte técnico.",
-		img: "/images/tambor2.jpeg"
+		title: "Pente de Moenda - Etapa Final",
+		desc: "Finalização do pente com inspeção técnica antes da entrega.",
+		video: "/images/pentevideo2.mp4"
+	},
+	{
+		title: "Pente de Moenda - Processo",
+		desc: "Sequência de usinagem e preparação para montagem do conjunto.",
+		video: "/images/pentevideo.mp4"
 	}
 ]
 
@@ -146,7 +141,7 @@ export default function Hero() {
 					</motion.div>
 				</motion.div>
 
-				{/* Carrossel de serviços */}
+				{/* Carrossel de vídeos */}
 				<div className="flex-shrink-0 w-full md:w-[640px]">
 					<div className="relative rounded-xl overflow-hidden shadow-2xl">
 						{/* Slide */}
@@ -162,10 +157,14 @@ export default function Hero() {
 									transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
 									className="absolute inset-0"
 								>
-									<img
-										src={slides[current].img}
-										alt={slides[current].title}
+									<video
+										src={slides[current].video}
 										className="w-full h-full object-cover"
+										autoPlay
+										muted
+										loop
+										playsInline
+										preload="metadata"
 									/>
 									{/* Overlay gradiente */}
 									<div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />

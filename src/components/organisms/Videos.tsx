@@ -14,6 +14,48 @@ const videos = [
 		desc: "Processo de usinagem de precisão de uma camisa de moenda 78, com controle dimensional rigoroso e acabamento conforme projeto.",
 		src: "/images/moendafrisada.mp4",
 		tag: "Usinagem"
+	},
+	{
+		title: "Moenda em Operação",
+		desc: "Registro técnico do processo de moenda em operação com foco em desempenho e estabilidade.",
+		src: "/images/moendavideo.mp4",
+		tag: "Operação"
+	},
+	{
+		title: "Moenda - Processo Complementar",
+		desc: "Etapa complementar do trabalho de moenda com acompanhamento técnico da equipe da Forte.",
+		src: "/images/moendavideo2.mp4",
+		tag: "Processo"
+	},
+	{
+		title: "Casquilhos e Buchas",
+		desc: "Detalhes do processo de fabricação e acabamento de casquilhos e buchas para conjuntos de moenda.",
+		src: "/images/buchasvideo.mp4",
+		tag: "Componentes"
+	},
+	{
+		title: "Casquilhos - Usinagem",
+		desc: "Usinagem de casquilhos com controle dimensional e ajuste conforme especificação do cliente.",
+		src: "/images/casquilhovideo.mp4",
+		tag: "Usinagem"
+	},
+	{
+		title: "Pente de Moenda",
+		desc: "Fabricação do pente de moenda com foco em robustez e precisão geométrica.",
+		src: "/images/pente.mp4",
+		tag: "Fabricação"
+	},
+	{
+		title: "Pente - Etapa 2",
+		desc: "Sequência do processo de fabricação e preparação do pente para montagem.",
+		src: "/images/pentevideo.mp4",
+		tag: "Processo"
+	},
+	{
+		title: "Pente - Etapa Final",
+		desc: "Finalização e inspeção do pente de moenda antes da entrega.",
+		src: "/images/pentevideo2.mp4",
+		tag: "Inspeção"
 	}
 ];
 
@@ -124,7 +166,7 @@ export default function Videos() {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, margin: "-60px" }}
-					className="grid gap-8 sm:grid-cols-2"
+					className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
 				>
 					{videos.map(v => (
 						<VideoCard key={v.title} video={v} />

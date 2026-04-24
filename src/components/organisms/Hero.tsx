@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react"
+import React, { useState, useCallback } from "react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import Button from "../atoms/Button"
@@ -58,11 +58,6 @@ export default function Hero() {
 		setDirection(-1)
 		setCurrent(c => (c - 1 + slides.length) % slides.length)
 	}, [])
-
-	useEffect(() => {
-		const id = setInterval(next, 3500)
-		return () => clearInterval(id)
-	}, [next])
 
 	const variants = {
 		enter: (d: number) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0 }),

@@ -1,10 +1,30 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { staggerContainer, fadeUp, fadeLeft, fadeRight } from "../lib/motion"
+import Seo from "../components/seo/Seo"
+import { ORGANIZATION_SCHEMA, SITE_URL } from "../lib/seo"
 
 export default function About() {
+	const pageTitle = "Sobre a Forte Moendas S/A | Engenharia e Experiência no Setor"
+	const pageDescription =
+		"Conheça a Forte Moendas S/A, empresa brasileira especializada em soluções industriais para o setor sucroenergético."
+
+	const webpageSchema = {
+		"@context": "https://schema.org",
+		"@type": "AboutPage",
+		name: pageTitle,
+		url: `${SITE_URL}/about`,
+		description: pageDescription
+	}
+
 	return (
 		<div>
+			<Seo
+				title={pageTitle}
+				description={pageDescription}
+				path="/about"
+				jsonLd={[ORGANIZATION_SCHEMA, webpageSchema]}
+			/>
 			{/* Hero banner */}
 			<section
 				className="py-20 overflow-hidden"
@@ -25,12 +45,12 @@ export default function About() {
 					>
 						Quem somos
 					</motion.p>
-					<motion.h2
+					<motion.h1
 						variants={fadeUp}
 						className="text-4xl font-extrabold text-white tracking-tight"
 					>
 						Forte Moendas S/A
-					</motion.h2>
+					</motion.h1>
 					<motion.p
 						variants={fadeUp}
 						className="mt-3 text-green-100 text-lg max-w-2xl"

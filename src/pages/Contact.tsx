@@ -1,10 +1,30 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { staggerContainer, fadeUp, cardItem } from "../lib/motion"
+import Seo from "../components/seo/Seo"
+import { ORGANIZATION_SCHEMA, SITE_URL } from "../lib/seo"
 
 export default function Contact() {
+	const pageTitle = "Contato | Forte Moendas S/A"
+	const pageDescription =
+		"Entre em contato com a Forte Moendas S/A em Sertãozinho/SP para projetos, fabricação, reforma e manutenção de moendas."
+
+	const webpageSchema = {
+		"@context": "https://schema.org",
+		"@type": "ContactPage",
+		name: pageTitle,
+		url: `${SITE_URL}/contact`,
+		description: pageDescription
+	}
+
 	return (
 		<div>
+			<Seo
+				title={pageTitle}
+				description={pageDescription}
+				path="/contact"
+				jsonLd={[ORGANIZATION_SCHEMA, webpageSchema]}
+			/>
 			{/* Header banner */}
 			<section
 				className="py-20"
@@ -25,12 +45,12 @@ export default function Contact() {
 					>
 						Fale conosco
 					</motion.p>
-					<motion.h2
+					<motion.h1
 						variants={fadeUp}
 						className="text-4xl font-extrabold text-white tracking-tight"
 					>
 						Contato
-					</motion.h2>
+					</motion.h1>
 					<motion.p variants={fadeUp} className="mt-3 text-green-100 max-w-xl">
 						Estamos prontos para atender sua usina. Entre em contato e fale com
 						um especialista.
@@ -90,4 +110,3 @@ export default function Contact() {
 		</div>
 	)
 }
-

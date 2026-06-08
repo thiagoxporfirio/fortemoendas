@@ -58,254 +58,231 @@ const photoGallery = [
 	{ src: "/images/rodete2.jpeg", alt: "Rodete em processo" },
 	{ src: "/images/rodete3.jpeg", alt: "Rodete finalizado" },
 	{ src: "/images/volandeira.jpeg", alt: "Volandeira" },
-	{ src: "/images/volandeira2.jpeg", alt: "Volandeira em montagem" }
-];
-
-const stats = [
-	{ value: "24h", label: "Suporte técnico" },
-	{ value: "+15", label: "Anos de experiência" },
-	{ value: "100%", label: "Foco no setor sucroenergético" },
-	{ value: "6", label: "Linhas de serviço" }
+	{ src: "/images/volandeira2.jpeg", alt: "Volandeira em montagem" },
 ];
 
 export default function WhatWeDo() {
 	return (
-		<section className="py-24 bg-white overflow-hidden">
-			<div className="container mx-auto">
-				{/* Header */}
-				<motion.div
-					className="mb-16 max-w-2xl"
-					variants={staggerContainer}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, margin: "-60px" }}
-				>
-					<motion.p
-						variants={fadeUp}
-						className="text-brand-green text-xs font-bold uppercase tracking-[0.2em] mb-3"
-					>
-						Nossa especialidade
-					</motion.p>
-					<motion.h2
-						variants={fadeUp}
-						className="text-4xl font-extrabold text-brand-dark leading-tight"
-					>
-						Quem é a Forte Moendas S/A e o que fazemos? <br />
-					</motion.h2>
-					<motion.p
-						variants={fadeUp}
-						className="mt-4 text-gray-600 leading-relaxed"
-					>
-						Atuamos no setor{" "}
-						<strong className="text-brand-dark">sucroenergético</strong>,
-						entregando soluções técnicas completas para usinas de cana-de-açúcar
-						— do projeto à entrega em campo.
-					</motion.p>
-				</motion.div>
-
-				{/* Stats bar */}
-				<motion.div
-					className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 p-8 rounded-2xl"
+		<>
+			{/* ── Seção quem somos — fundo verde ──────────────────────── */}
+			<section className="py-24 bg-brand-green overflow-hidden relative">
+				<div
+					className="absolute inset-0 opacity-[0.06]"
 					style={{
-						background:
-							"linear-gradient(135deg, #075C2C 0%, #0D8040 60%, #10994D 100%)"
+						backgroundImage:
+							"radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+						backgroundSize: "28px 28px"
 					}}
-					variants={staggerContainer}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, margin: "-60px" }}
-				>
-					{stats.map(s => (
-						<motion.div key={s.label} variants={fadeUp} className="text-center">
-							<p className="text-4xl font-extrabold text-white">{s.value}</p>
-							<p className="text-green-200 text-sm mt-1">{s.label}</p>
-						</motion.div>
-					))}
-				</motion.div>
+				/>
 
-				{/* Featured row — imagem industrial + texto setor */}
-				<div className="grid md:grid-cols-2 gap-12 items-center mb-24">
+				<div className="container mx-auto relative z-10">
 					<motion.div
-						variants={fadeLeft}
+						className="mb-16 max-w-3xl"
+						variants={staggerContainer}
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true, margin: "-60px" }}
-						className="relative"
 					>
-						{/* Collage de fotos reais */}
-						<div className="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden shadow-xl">
-							<video
-								src="/images/pente.mp4"
-								title="Pente de moenda Forte Moendas"
-								className="w-full h-44 object-cover"
-								autoPlay
-								muted
-								loop
-								playsInline
-								preload="metadata"
-							/>
-							<img
-								src="/images/rodete2.jpeg"
-								alt="Rodetes Forte Moendas"
-								className="w-full h-44 object-cover"
-							/>
-							<img
-								src="/images/volandeira2.jpeg"
-								alt="Volandeira Forte Moendas"
-								className="w-full h-44 object-cover"
-							/>
-							<img
-								src="/images/montagemcompleta.jpeg"
-								alt="Montagem completa Forte Moendas"
-								className="w-full h-44 object-cover"
-							/>
-						</div>
-						{/* Badge sobre a foto */}
-						<div className="absolute bottom-4 left-4 bg-brand-green text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow">
-							Trabalhos Reais
-						</div>
+						<motion.span
+							variants={fadeUp}
+							className="tech-label text-white/70 mb-4 flex items-center gap-3"
+						>
+							<span className="inline-block w-8 h-[2px] bg-white/40 flex-shrink-0" />
+							Nossa especialidade
+						</motion.span>
+						<motion.h2
+							variants={fadeUp}
+							className="font-display text-[clamp(2.8rem,5vw,4.5rem)] font-black text-white uppercase leading-[0.9] text-balance"
+						>
+							Forte Moendas S/A —<br />
+							<span className="text-white/50">o que fazemos</span>
+						</motion.h2>
+						<motion.p
+							variants={fadeUp}
+							className="mt-6 text-white/65 leading-relaxed max-w-xl"
+						>
+							Atuamos no setor{" "}
+							<strong className="text-white">sucroenergético</strong>,
+							entregando soluções técnicas completas para usinas de cana-de-açúcar
+							— do projeto à entrega em campo.
+						</motion.p>
 					</motion.div>
 
+					{/* Featured row — vídeo/imagens + texto */}
+					<div className="grid md:grid-cols-2 gap-16 items-center">
+						<motion.div
+							variants={fadeLeft}
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, margin: "-60px" }}
+							className="relative"
+						>
+							<div className="grid grid-cols-2 gap-px bg-white/10">
+								<video
+									src="/images/pente.mp4"
+									className="w-full h-52 object-cover"
+									autoPlay muted loop playsInline preload="metadata"
+								/>
+								<img src="/images/rodete2.jpeg" alt="Rodetes" className="w-full h-52 object-cover" />
+								<img src="/images/volandeira2.jpeg" alt="Volandeira" className="w-full h-52 object-cover" />
+								<img src="/images/engrenagensrodete.jpeg" alt="Engrenagens" className="w-full h-52 object-cover" />
+							</div>
+							<div className="absolute -bottom-3 -left-3 bg-brand-soil text-white tech-label px-4 py-2">
+								Trabalhos Reais
+							</div>
+						</motion.div>
+
+						<motion.div
+							variants={fadeRight}
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, margin: "-60px" }}
+						>
+							<h3 className="font-display text-3xl font-black text-white uppercase mb-5 leading-tight">
+								Presença completa<br />na linha de moagem
+							</h3>
+							<p className="text-white/65 leading-relaxed mb-4">
+								A Forte Moendas S/A opera na fabricação e reforma de equipamentos
+								críticos para o processamento de cana-de-açúcar. Com estrutura
+								fabril própria em Sertãozinho/SP — coração do setor
+								sucroenergético brasileiro — entregamos projetos com precisão
+								industrial e agilidade operacional.
+							</p>
+							<p className="text-white/65 leading-relaxed">
+								Nosso portfólio contempla desde grandes conjuntos de moenda até
+								componentes de precisão, com rastreabilidade técnica, controle
+								dimensional e suporte pós-entrega.
+							</p>
+
+							<ul className="mt-8 space-y-3">
+								{[
+									"Fabricação de máquinas e equipamentos industriais",
+									"Reforma e recuperação de conjuntos de moenda",
+									"Usinagem de precisão de cilindros e eixos",
+									"Fabricação de engrenagens e transmissão de potência",
+									"Montagem e comissionamento em campo"
+								].map(item => (
+									<li
+										key={item}
+										className="flex items-start gap-3 text-sm text-white/80"
+									>
+										<span className="mt-1.5 flex-shrink-0 w-4 h-[2px] bg-white/50" />
+										{item}
+									</li>
+								))}
+							</ul>
+						</motion.div>
+					</div>
+				</div>
+			</section>
+
+			{/* ── Seção produtos — fundo soil escuro ───────────────────── */}
+			<section className="py-24 bg-brand-soil overflow-hidden grain-overlay">
+				<div className="container mx-auto">
 					<motion.div
-						variants={fadeRight}
+						variants={staggerContainer}
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true, margin: "-60px" }}
 					>
-						<h3 className="text-2xl font-bold text-brand-dark mb-4">
-							Presença completa na linha de moagem
-						</h3>
-						<p className="text-gray-600 leading-relaxed mb-4">
-							A Forte Moendas S/A opera na fabricação e reforma de equipamentos
-							críticos para o processamento de cana-de-açúcar. Com estrutura
-							fabril própria em Sertãozinho/SP — coração do setor
-							sucroenergético brasileiro — entregamos projetos com precisão
-							industrial e agilidade operacional.
-						</p>
-						<p className="text-gray-600 leading-relaxed">
-							Nosso portfólio contempla desde grandes conjuntos de moenda até
-							componentes de precisão, com rastreabilidade técnica, controle
-							dimensional e suporte pós-entrega.
-						</p>
+						<motion.span
+							variants={fadeUp}
+							className="tech-label harvest-line text-brand-green mb-4 block"
+						>
+							Principais produtos
+						</motion.span>
+						<motion.h3
+							variants={fadeUp}
+							className="font-display text-[clamp(2.2rem,4vw,3.5rem)] font-black text-white uppercase leading-tight mb-14"
+						>
+							O que fabricamos<br />
+							<span className="text-brand-green">e reformamos</span>
+						</motion.h3>
 
-						<ul className="mt-6 space-y-2">
-							{[
-								"Reforma de máquinas e equipamentos industriais",
-								"Reforma e recuperação de conjuntos de moenda",
-								"Usinagem de precisão",
-								"Reforma de engrenagens de potência",
-								"Montagem e comissionamento em campo"
-							].map(item => (
-								<li
-									key={item}
-									className="flex items-start gap-2 text-sm text-gray-700"
+						<motion.div
+							variants={staggerContainer}
+							className="grid gap-px sm:grid-cols-2 lg:grid-cols-3 bg-white/10"
+						>
+							{products.map(p => (
+								<motion.article
+									key={p.title}
+									variants={cardItem}
+									className="group relative overflow-hidden bg-brand-soil cursor-default"
 								>
-									<span className="mt-0.5 h-2 w-2 rounded-full bg-brand-green flex-shrink-0" />
-									{item}
-								</li>
+									<div className="relative h-56 overflow-hidden">
+										<img
+											src={p.img}
+											alt={p.title}
+											className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+										/>
+										<div className="absolute inset-0 bg-gradient-to-t from-brand-soil via-brand-soil/30 to-transparent" />
+										<span className="absolute top-3 left-3 tech-label bg-brand-green text-white px-2.5 py-1">
+											{p.tag}
+										</span>
+									</div>
+									<div className="p-6">
+										<h4 className="font-display font-black text-white text-xl uppercase leading-tight mb-3">
+											{p.title}
+										</h4>
+										<p className="text-sm text-white/55 leading-relaxed">
+											{p.desc}
+										</p>
+										<div className="mt-4 w-0 h-[2px] bg-brand-green transition-all duration-500 group-hover:w-12" />
+									</div>
+								</motion.article>
 							))}
-						</ul>
+						</motion.div>
 					</motion.div>
 				</div>
+			</section>
 
-				{/* Product cards */}
-				<motion.div
-					variants={staggerContainer}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, margin: "-60px" }}
-				>
-					<motion.p
-						variants={fadeUp}
-						className="text-brand-green text-xs font-bold uppercase tracking-[0.2em] mb-3"
-					>
-						Principais produtos
-					</motion.p>
-					<motion.h3
-						variants={fadeUp}
-						className="text-3xl font-bold text-brand-dark mb-10"
-					>
-						O que fabricamos e reformamos
-					</motion.h3>
-
+			{/* ── Galeria — fundo cinza escuro ─────────────────────────── */}
+			<section className="py-20 bg-brand-steel overflow-hidden">
+				<div className="container mx-auto">
 					<motion.div
 						variants={staggerContainer}
-						className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-60px" }}
 					>
-						{products.map(p => (
-							<motion.article
-								key={p.title}
-								variants={cardItem}
-								whileHover={{
-									y: -6,
-									boxShadow: "0 16px 48px rgba(13,128,64,0.12)"
-								}}
-								className="rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm cursor-default"
-							>
-								<div className="relative h-48 overflow-hidden">
+						<motion.span
+							variants={fadeUp}
+							className="tech-label harvest-line text-brand-green mb-4 block"
+						>
+							Galeria técnica
+						</motion.span>
+						<motion.h3
+							variants={fadeUp}
+							className="font-display text-3xl font-black text-white uppercase mb-10"
+						>
+							Fotos de fabricação<br />
+							<span className="text-white/40">e reforma</span>
+						</motion.h3>
+
+						<motion.div
+							variants={staggerContainer}
+							className="grid grid-cols-2 md:grid-cols-4 gap-1"
+						>
+							{photoGallery.map((photo, i) => (
+								<motion.div
+									key={photo.src}
+									variants={cardItem}
+									className={`relative overflow-hidden group ${i === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
+								>
 									<img
-										src={p.img}
-										alt={p.title}
-										className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+										src={photo.src}
+										alt={photo.alt}
+										className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+											i === 0 ? "h-80 md:h-full" : "h-40"
+										}`}
 									/>
-									<div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent" />
-									<span className="absolute bottom-3 left-3 bg-brand-green text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-										{p.tag}
-									</span>
-								</div>
-								<div className="p-5">
-									<h4 className="font-bold text-brand-dark text-base mb-2">
-										{p.title}
-									</h4>
-									<p className="text-sm text-gray-600 leading-relaxed">
-										{p.desc}
-									</p>
-								</div>
-							</motion.article>
-						))}
+									<div className="absolute inset-0 bg-brand-soil/0 group-hover:bg-brand-soil/30 transition-colors duration-300" />
+								</motion.div>
+							))}
+						</motion.div>
 					</motion.div>
-				</motion.div>
-
-				<motion.div
-					variants={staggerContainer}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, margin: "-60px" }}
-					className="mt-16"
-				>
-					<motion.p
-						variants={fadeUp}
-						className="text-brand-green text-xs font-bold uppercase tracking-[0.2em] mb-3"
-					>
-						Galeria técnica
-					</motion.p>
-					<motion.h3
-						variants={fadeUp}
-						className="text-2xl font-bold text-brand-dark mb-8"
-					>
-						Fotos recentes de fabricação e reforma
-					</motion.h3>
-
-					<motion.div
-						variants={staggerContainer}
-						className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-					>
-						{photoGallery.map(photo => (
-							<motion.div
-								key={photo.src}
-								variants={cardItem}
-								className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white"
-							>
-								<img
-									src={photo.src}
-									alt={photo.alt}
-									className="w-full h-40 object-cover"
-								/>
-							</motion.div>
-						))}
-					</motion.div>
-				</motion.div>
-			</div>
-		</section>
+				</div>
+			</section>
+		</>
 	);
 }

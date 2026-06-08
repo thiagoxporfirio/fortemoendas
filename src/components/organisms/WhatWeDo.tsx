@@ -190,10 +190,10 @@ export default function WhatWeDo() {
 
 						<ul className="mt-6 space-y-2">
 							{[
-								"Fabricação de máquinas e equipamentos industriais",
+								"Reforma de máquinas e equipamentos industriais",
 								"Reforma e recuperação de conjuntos de moenda",
-								"Usinagem de precisão de cilindros e eixos",
-								"Fabricação de engrenagens e transmissão de potência",
+								"Usinagem de precisão",
+								"Reforma de engrenagens de potência",
 								"Montagem e comissionamento em campo"
 							].map(item => (
 								<li

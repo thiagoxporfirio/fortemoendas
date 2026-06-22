@@ -10,16 +10,16 @@ import {
 
 const products = [
 	{
-		title: "Moendas — Friso e Fabricação",
-		desc: "Execução de friso (grooving) em cilindros e fabricação de novas moendas completas, com padrões técnicos que maximizam a extração de caldo.",
+		title: "Moendas - solda de camisas",
+		desc: "Solda em camisas de moendas com material aplicado de altíssima qualidade, aumentando a durabilidade e mantendo a eficiência na extração de caldo.",
 		img: "/images/moenda.jpeg",
-		tag: "Friso & Fabricação"
+		tag: "Solda de Camisas"
 	},
 	{
-		title: "Coroas e Pinhões",
-		desc: "Fabricação de engrenagens industriais de grande porte com aço especial, garantindo precisão dimensional e alta resistência ao desgaste.",
-		img: "/images/engrenagensrodete.jpeg",
-		tag: "Fabricação"
+		title: "Rodetes novos e reformados",
+		desc: "Fabricação e recuperação de rodetes para conjuntos de moenda, com usinagem de precisão e materiais selecionados para alta resistência ao desgaste.",
+		img: "/images/rodete.jpeg",
+		tag: "Novos & Reformados"
 	},
 	{
 		title: "Tambor Nivelador",
@@ -28,22 +28,46 @@ const products = [
 		tag: "Fabricação & Reforma"
 	},
 	{
-		title: "Rodetes",
-		desc: "Fabricação e recuperação de rodetes para conjuntos de moenda, com usinagem de precisão e materiais selecionados para alta resistência ao desgaste.",
-		img: "/images/rodete.jpeg",
-		tag: "Usinagem"
-	},
-	{
 		title: "Volandeiras",
-		desc: "Fabricação e reforma de volandeiras, componentes críticos no conjunto de moenda, com controle dimensional rigoroso e acabamento conforme projeto.",
+		desc: "Reforma de volandeiras, componentes críticos no conjunto de moenda, com controle dimensional rigoroso e acabamento conforme projeto.",
 		img: "/images/volandeira.jpeg",
-		tag: "Fabricação & Reforma"
+		tag: "Reforma"
 	},
 	{
-		title: "Casquilhos",
-		desc: "Fabricação e recuperação de casquilhos para eixos de moenda, com tolerâncias apertadas, bronzes especiais e geometria adequada ao projeto original.",
+		title: "Conjunto de caixa de mancal",
+		desc: "Fabricação e recuperação de caixas para eixo de moendas conforme projetos.",
 		img: "/images/buchas.jpeg",
 		tag: "Fabricação & Recuperação"
+	},
+	{
+		title: "Pentes",
+		desc: "Fabricação e aplicação de solda obtendo alta performance e durabilidade na moagem, com material de altíssima qualidade.",
+		img: "/images/pente.png",
+		tag: "Solda"
+	},
+	{
+		title: "Bagaceira",
+		desc: "Fabricação de bagaceiras rigorosamente usinadas, atendendo ao controle dimensional de acordo com o projeto.",
+		img: "/images/bagaceira2.png",
+		tag: "Fabricação"
+	},
+	{
+		title: "Solda de bagaceira",
+		desc: "Aplicação de solda em bagaceira obtendo alta performance e durabilidade na moagem, com material de altíssima qualidade.",
+		img: "/images/soldabagaceira.png",
+		tag: "Solda"
+	},
+	{
+		title: "Flange de moenda",
+		desc: "Fornecimento e reforma em flanges de moendas de alta drenagem e convencional com aplicação de solda dura de proteção de altíssima qualidade.",
+		img: "/images/flange.jpeg",
+		tag: "Fornecimento & Reforma"
+	},
+	{
+		title: "Eixo com engrenagem",
+		desc: "Fabricação e reargolamento de eixos e engrenagens.",
+		img: "/images/eixocomengrenagem.jpeg",
+		tag: "Fabricação & Reforma"
 	}
 ];
 
@@ -108,7 +132,7 @@ export default function WhatWeDo() {
 						</motion.p>
 					</motion.div>
 
-					{/* Featured row — vídeo/imagens + texto */}
+					{/* Featured row — imagens + texto */}
 					<div className="grid md:grid-cols-2 gap-16 items-center">
 						<motion.div
 							variants={fadeLeft}
@@ -118,14 +142,10 @@ export default function WhatWeDo() {
 							className="relative"
 						>
 							<div className="grid grid-cols-2 gap-px bg-white/10">
-								<video
-									src="/images/pente.mp4"
-									className="w-full h-52 object-cover"
-									autoPlay muted loop playsInline preload="metadata"
-								/>
-								<img src="/images/rodete2.jpeg" alt="Rodetes" className="w-full h-52 object-cover" />
+								<img src="/images/moenda.jpeg" alt="Moenda" className="w-full h-52 object-cover" />
+								<img src="/images/rodete.jpeg" alt="Rodete" className="w-full h-52 object-cover" />
+								<img src="/images/bagaceira2.png" alt="Bagaceira" className="w-full h-52 object-cover" />
 								<img src="/images/volandeira2.jpeg" alt="Volandeira" className="w-full h-52 object-cover" />
-								<img src="/images/engrenagensrodete.jpeg" alt="Engrenagens" className="w-full h-52 object-cover" />
 							</div>
 							<div className="absolute -bottom-3 -left-3 bg-brand-soil text-white tech-label px-4 py-2">
 								Trabalhos Reais

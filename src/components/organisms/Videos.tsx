@@ -7,10 +7,10 @@ const videos = [
 	{ title: "Camisa de Moenda 78", desc: "Usinagem de precisão de camisa de moenda 78 com controle dimensional rigoroso.", src: "/images/moendafrisada.mp4", tag: "Usinagem" },
 	{ title: "Moenda em Operação", desc: "Registro do processo de moenda em operação com foco em desempenho.", src: "/images/moendavideo.mp4", tag: "Operação" },
 	{ title: "Processo Complementar", desc: "Etapa complementar com acompanhamento técnico da equipe da Forte.", src: "/images/moendavideo2.mp4", tag: "Processo" },
-	{ title: "Conjunto de caixa de mancal", desc: "Fabricação e acabamento de casquilhos e buchas para conjuntos de moenda.", src: "/images/buchasvideo.mp4", tag: "Componentes" },
+	{ title: "Conjunto de caixa de mancal", desc: "Fabricação e recuperação de caixas para eixo de moendas conforme projetos.", src: "/images/buchasvideo.mp4", tag: "Componentes" },
 	{ title: "Casquilhos — Usinagem", desc: "Usinagem de casquilhos com controle dimensional e ajuste por especificação.", src: "/images/casquilhovideo.mp4", tag: "Usinagem" },
-	{ title: "Bagaceira", desc: "Fabricação do pente com foco em robustez e precisão geométrica.", src: "/images/pente.mp4", tag: "Fabricação" },
-	{ title: "Solda de bagaceira", desc: "Sequência de fabricação e preparação para montagem do conjunto.", src: "/images/pentevideo.mp4", tag: "Processo" },
+	{ title: "Bagaceira", desc: "Fabricação de bagaceiras rigorosamente usinadas, atendendo ao controle dimensional de acordo com o projeto.", src: "/images/pente.mp4", tag: "Fabricação" },
+	{ title: "Solda de bagaceira", desc: "Aplicação de solda em bagaceira obtendo alta performance e durabilidade na moagem, com material de altíssima qualidade.", src: "/images/pentevideo.mp4", tag: "Processo" },
 	{ title: "Pente — Etapa Final", desc: "Finalização e inspeção do pente antes da entrega.", src: "/images/pentevideo2.mp4", tag: "Inspeção" }
 ];
 
